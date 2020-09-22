@@ -1,0 +1,189 @@
+
+(rules PCB Stepper Controller
+  (snap_angle 
+    fortyfive_degree
+  )
+  (autoroute_settings
+    (fanout off)
+    (autoroute on)
+    (postroute on)
+    (vias on)
+    (via_costs 50)
+    (plane_via_costs 5)
+    (start_ripup_costs 100)
+    (start_pass_no 2432)
+    (layer_rule F.Cu
+      (active on)
+      (preferred_direction vertical)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 2.0)
+    )
+    (layer_rule B.Cu
+      (active on)
+      (preferred_direction horizontal)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 2.0)
+    )
+  )
+  (rule
+    (width 152.4)
+    (clear 152.6)
+    (clear 76.2 (type smd_to_turn_gap))
+    (clear 203.4 (type default_12V))
+    (clear 203.4 (type default_PWR))
+    (clear 38.2 (type smd_smd))
+    (clear 203.4 (type smd_12V))
+    (clear 203.4 (type smd_PWR))
+    (clear 203.4 (type "kicad_default"_12V))
+    (clear 203.4 (type "kicad_default"_PWR))
+    (clear 203.4 (type 12V_12V))
+    (clear 203.4 (type 12V_PWR))
+    (clear 203.4 (type 12V_SIGNAL))
+    (clear 203.4 (type PWR_PWR))
+    (clear 203.4 (type PWR_SIGNAL))
+  )
+  (padstack "Via[0-1]_685.8:330.2_um"
+    (shape
+      (circle F.Cu 685.8 0.0 0.0)
+    )
+    (shape
+      (circle B.Cu 685.8 0.0 0.0)
+    )
+    (attach off)
+  )
+  (padstack "Via[0-1]_889:508_um"
+    (shape
+      (circle F.Cu 889.0 0.0 0.0)
+    )
+    (shape
+      (circle B.Cu 889.0 0.0 0.0)
+    )
+    (attach off)
+  )
+  (padstack "Via[0-1]_762:508_um"
+    (shape
+      (circle F.Cu 762.0 0.0 0.0)
+    )
+    (shape
+      (circle B.Cu 762.0 0.0 0.0)
+    )
+    (attach off)
+  )
+  (via 
+    "Via[0-1]_685.8:330.2_um" "Via[0-1]_685.8:330.2_um" default
+  )
+  (via 
+    "Via[0-1]_889:508_um" "Via[0-1]_889:508_um" default
+  )
+  (via 
+    "Via[0-1]_762:508_um" "Via[0-1]_762:508_um" default
+  )
+  (via 
+    "Via[0-1]_685.8:330.2_um-kicad_default" "Via[0-1]_685.8:330.2_um" "kicad_default"
+  )
+  (via 
+    "Via[0-1]_889:508_um-kicad_default" "Via[0-1]_889:508_um" "kicad_default"
+  )
+  (via 
+    "Via[0-1]_762:508_um-kicad_default" "Via[0-1]_762:508_um" "kicad_default"
+  )
+  (via 
+    "Via[0-1]_685.8:330.2_um-12V" "Via[0-1]_685.8:330.2_um" 12V
+  )
+  (via 
+    "Via[0-1]_889:508_um-12V" "Via[0-1]_889:508_um" 12V
+  )
+  (via 
+    "Via[0-1]_762:508_um-12V" "Via[0-1]_762:508_um" 12V
+  )
+  (via 
+    "Via[0-1]_685.8:330.2_um-PWR" "Via[0-1]_685.8:330.2_um" PWR
+  )
+  (via 
+    "Via[0-1]_889:508_um-PWR" "Via[0-1]_889:508_um" PWR
+  )
+  (via 
+    "Via[0-1]_762:508_um-PWR" "Via[0-1]_762:508_um" PWR
+  )
+  (via 
+    "Via[0-1]_685.8:330.2_um-SIGNAL" "Via[0-1]_685.8:330.2_um" SIGNAL
+  )
+  (via 
+    "Via[0-1]_889:508_um-SIGNAL" "Via[0-1]_889:508_um" SIGNAL
+  )
+  (via 
+    "Via[0-1]_762:508_um-SIGNAL" "Via[0-1]_762:508_um" SIGNAL
+  )
+  (via_rule
+    default "Via[0-1]_685.8:330.2_um"
+  )
+  (via_rule
+    "kicad_default" "Via[0-1]_685.8:330.2_um-kicad_default"
+  )
+  (via_rule
+    12V "Via[0-1]_889:508_um-12V"
+  )
+  (via_rule
+    PWR "Via[0-1]_762:508_um-PWR"
+  )
+  (via_rule
+    SIGNAL "Via[0-1]_685.8:330.2_um-SIGNAL"
+  )
+  (class default
+    (clearance_class default)
+    (via_rule default)
+    (rule
+      (width 152.4)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class "kicad_default"
+    +5V +3V3 TxD RxD
+    (clearance_class "kicad_default")
+    (via_rule kicad_default)
+    (rule
+      (width 152.4)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class 12V
+    "Net-(A1-Pad3)" "Net-(A1-Pad4)" "Net-(A1-Pad5)" "Net-(A1-Pad6)" +12V
+    (clearance_class 12V)
+    (via_rule 12V)
+    (rule
+      (width 762.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class PWR
+    GND
+    (clearance_class PWR)
+    (via_rule PWR)
+    (rule
+      (width 508.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class SIGNAL
+    "MOTOR_EN" M0 M1 M2 STEP DIR RESET "XTAL_1"
+    "XTAL_2" "Net-(C4-Pad1)" "Net-(D1-Pad2)" "Net-(D2-Pad2)" "Net-(D3-Pad2)" "ENCDR_A" "ENCDR_B" MAX
+    MIN "MISO_5V" "SCK_5V" "MOSI_5V" "CS_3V3" "SCK_3V3" "MOSI_3V3" "MISO_3V3"
+    "CS_5V" STATUS STALL
+    (clearance_class SIGNAL)
+    (via_rule SIGNAL)
+    (rule
+      (width 152.4)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+)
